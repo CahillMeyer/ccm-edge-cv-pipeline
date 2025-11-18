@@ -39,3 +39,14 @@
 
 # debug information files
 *.dwo
+
+# CMake Build Directory
+build/
+cmake-build-debug/
+.vscode/
+
+# CMake Artifacts (if built in root)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
