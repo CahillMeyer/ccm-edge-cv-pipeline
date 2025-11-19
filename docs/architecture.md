@@ -4,10 +4,10 @@ This project follows a modular **Pipe & Filter** architecture designed for flexi
 
 ```mermaid
 flowchart LR
-    Config[ConfigLoader<br/>(YAML)] --> App
+    Config["ConfigLoader<br/>(YAML)"] --> App
     
     subgraph IO [I/O Layer]
-        Cam[ICameraSource<br/>(OpenCV / V4L2)]
+        Cam["ICameraSource<br/>(OpenCV / V4L2)"]
     end
 
     subgraph Core [Core Logic]
