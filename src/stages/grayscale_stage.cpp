@@ -1,4 +1,5 @@
 #include "stages/grayscale_stage.hpp"
+#include "core/perf_timer.hpp"
 #include <opencv2/imgproc.hpp> // Required for cv::cvtColor
 
 namespace ccm::stages {
