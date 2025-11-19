@@ -21,13 +21,12 @@ This repository is a **reference implementation** for:
 
 ## Features (planned)
 
-- ✅ CMake-based structured C++ project
-- ⏳ OpenCV capture loop (V4L2 / GStreamer)
-- ⏳ Modular stages (grayscale, blur, motion, overlay)
-- ⏳ Configurable pipeline through YAML/JSON
-- ⏳ FPS + timing metrics
-- ⏳ Optional ONNX/TensorRT inference
-- ⏳ Unit testing
+- ✅ **CMake-based Architecture**: Modular library/executable separation.
+- ✅ **Hardware Abstraction**: `ICameraSource` interface for easy sensor swapping.
+- ✅ **Config-Driven**: YAML-based pipeline construction at runtime.
+- ✅ **Robust IO**: MJPEG optimizations for WSL/USB bandwidth constraints.
+- ⏳ **Metrics**: FPS + timing metrics (Coming in Phase 5).
+- ⏳ **Inference**: Optional ONNX/TensorRT support.
 
 ---
 
