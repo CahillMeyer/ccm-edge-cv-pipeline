@@ -1,0 +1,59 @@
+name: Build & Lint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Check Markdown + Repo Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify folder structure
+        run: |
+          test -d src || (echo "Missing src/ folder" && exit 1)
+          test -d include || (echo "Missing include/ folder" && exit 1)
+          test -d config || (echo "Missing config/ folder" && exit 1)
+          test -d docs || (echo "Missing docs/ folder" && exit 1)
+          echo "Folder structure OK"
+
+      - name: Lint Markdown
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: |
+          npm install -g markdownlint-cli
+          markdownlint "**/*.md" || true
+
+  build-check:
+    name: Validate CMake Build (Linux)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake build-essential libopencv-dev clang-format
+
+      - name: Check CMake Version
+        run: cmake --version
+
+      - name: Configure CMake
+        run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug ..
+
+      - name: Build
+        run: cmake --build build -- -j$(nproc)
+
+      - name: Run Clang-Format Dry Run
+        run: |
+          find src include -name "*.cpp" -o -name "*.hpp" | xargs clang-format -n -Werror || true

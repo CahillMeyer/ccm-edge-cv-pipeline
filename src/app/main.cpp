@@ -42,8 +42,8 @@ int main(int argc, char** argv) {
     std::signal(SIGTERM, signal_handler);
 
     // 1. Load Configuration
-    // Default to "config/pipeline.yaml" if not provided
-    std::string config_path = (argc > 1) ? argv[1] : "config/pipeline.yaml";
+    // Default to "config/pipeline_basic.yaml" if not provided
+    std::string config_path = (argc > 1) ? argv[1] : "config/pipeline_basic.yaml";
     std::cout << "[CCM-Pipeline] Loading config from: " << config_path << std::endl;
     
     auto config = core::ConfigLoader::load_from_file(config_path);
