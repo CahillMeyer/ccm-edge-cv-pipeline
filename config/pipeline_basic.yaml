@@ -6,3 +6,5 @@ camera:
 
 pipeline:
   - type: grayscale
+  # - type: blur  (planned)
+  # - type: yolo  (planned)

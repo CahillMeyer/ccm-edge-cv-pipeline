@@ -1,6 +1,14 @@
-# CCM Edge CV Pipeline
+# ccm-edge-cv-pipeline
+
+![Platform](https://img.shields.io/badge/Platform-Jetson%20%7C%20Pi%20%7C%20Linux-blue)
+![Language](https://img.shields.io/badge/Language-C%2B%2B17-purple)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![CI](https://github.com/CahillMeyer/ccm-edge-cv-pipeline/actions/workflows/ci.yml/badge.svg)
+
 A modular, lightweight, C++ computer-vision pipeline designed for **Jetson**, **Raspberry Pi**, and general Linux systems.  
 Built for **real-time processing**, **config-driven pipelines**, and **extensibility**.
+
+> **Work-in-progress**: This repository is part of the CCMCode Embedded Vision toolkit and serves as a portfolio-quality example of modern C++ pipeline architecture.
 
 ## 🚀 Status Overview
 This repository is under active development.  

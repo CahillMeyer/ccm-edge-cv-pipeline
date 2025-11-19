@@ -1,5 +1,7 @@
 #include "io/opencv_camera.hpp"
-#include <iostream> // TODO: Replace with spdlog in Phase 3
+#include <iostream> 
+
+// TODO: Integrate spdlog for standardized logging across the pipeline.
 
 namespace ccm::io {
 
